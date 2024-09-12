@@ -9,3 +9,4 @@ while index_list < len(my_list):
         index_list = index_list + 1
     else:
         break
+print('Приложение завершено')
