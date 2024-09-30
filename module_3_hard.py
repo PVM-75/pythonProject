@@ -3,7 +3,7 @@ total_sum = 0
 def calculate_structure_sum(data):
     global total_sum
 
-    if isinstance(data, list) or isinstance(data, tuple):
+    if isinstance(data, list) or isinstance(data, tuple) or isinstance(data, set):
         for item in data:
             if isinstance(item, (int, float)):
                 total_sum += item
@@ -11,19 +11,15 @@ def calculate_structure_sum(data):
                 total_sum += len(item)
             else:
                 calculate_structure_sum(item)
-    # elif isinstance(data, dict):
-    #     for key, value in data.items():
-    #         total_sum += calculate_structure_sum(key)
-    #         total_sum += calculate_structure_sum(value)
     elif isinstance(data, dict):
-        for key in data.items():
+        for key, value in data.items():
             if isinstance(key, (int, float)):
                 total_sum += key
             elif isinstance(key, str):
                 total_sum += len(key)
             else:
                 calculate_structure_sum(key)
-        for value in data.items():
+        # for value in data.items():
             if isinstance(value, (int, float)):
                 total_sum += value
             elif isinstance(value, str):
@@ -32,7 +28,7 @@ def calculate_structure_sum(data):
                 calculate_structure_sum(value)
     elif isinstance(data, str):
         total_sum += len(data)
-    elif isinstance(data, (int, float)):
+    elif isinstance(data, int) or isinstance(data, float):
         total_sum += data
 
     return total_sum
@@ -47,4 +43,4 @@ data_structure = [
 ]
 
 result = calculate_structure_sum(data_structure)
-print(result)  # Вывод: 99
+print(result)
