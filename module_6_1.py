@@ -6,10 +6,11 @@ class Animal:
 
     def eat(self, food):
         if food.eatable == True:
-            print(<self.name>, 'съел ', <food.name>)
+            print(f"{self.name} съел {food.name}")
             self.fed = True
         else:
-            print(<self.name>, 'не стал есть', <food.name>)
+            print(f"{self.name} не стал есть {food.name}")
+            self.alive = False
 
 
 class Plant:
