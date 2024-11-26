@@ -28,8 +28,6 @@ class Predator(Animal):
 
 class Flower(Plant):
     pass
-    # self.eatable = False
-
 
 class Fruit(Plant):
     def __init__(self, name):
