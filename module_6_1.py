@@ -16,7 +16,7 @@ class Animal:
 class Plant:
     def __init__(self, name):
         self.name = name
-        self.eatable = True
+        self.eatable = False
 
 class Mammal(Animal):
     pass
@@ -27,13 +27,14 @@ class Predator(Animal):
 
 
 class Flower(Plant):
-    eatable = False
     pass
+    # self.eatable = False
 
 
 class Fruit(Plant):
-    eatable = True
-    pass
+    def __init__(self, name):
+        super().__init__(name)
+        self.eatable = True
 
 if __name__ == '__main__':
     # Выполняемый код(для проверки):
@@ -47,7 +48,7 @@ if __name__ == '__main__':
 
     print(a1.alive)
     print(a2.fed)
-    # a1.eat(p1)
-    # a2.eat(p2)
-    # print(a1.alive)
-    # print(a2.fed)
+    a1.eat(p1)
+    a2.eat(p2)
+    print(a1.alive)
+    print(a2.fed)
