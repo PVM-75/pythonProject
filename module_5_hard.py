@@ -85,7 +85,7 @@ class UrTube:
                 elif item.adult_mode == True and self.current_user.age < 18:
                     print("Вам нет 18 лет, пожалуйста покиньте страницу")
                 else:
-                    for i in range(1, 11):
+                    for i in range(1, item.duration + 1):
                         print(i, end=' ', flush=True)
                         time.sleep(0.5) # Поставил меньше 1, чтобы "время" быстрее шло..
                     print('Конец видео')
