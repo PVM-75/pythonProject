@@ -3,7 +3,7 @@ class Vehicle:
         self.owner = owner
         self.__model = model
         self.__engine_power = engine_power
-        self.color = color
+        self.__color = color
 
     def get_model(self):
         print(f"Модель: {self.__model}")
@@ -12,12 +12,12 @@ class Vehicle:
         print(f"Мощность: {self.__engine_power}")
 
     def get_color(self):
-        print(f"Цвет: {self.color}")
+        print(f"Цвет: {self.__color}")
 
     def print_info(self):
         print(f"Модель: {self.__model}")
         print(f"Мощность: {self.__engine_power}")
-        print(f"Цвет: {self.color}")
+        print(f"Цвет: {self.__color}")
         print(f"Владелец: {self.owner}")
 
     def set_color(self, new_color):
@@ -26,8 +26,8 @@ class Vehicle:
         for i in __color_variants:
             sum_of_colors -= 1
             if new_color.lower() == i:
-                self.color = new_color.lower()
-                print(f'У {self.__model} сменили цвет на {new_color.lower()}')
+                self.__color = new_color.lower()
+                print(f'У {self.__model} сменили цвет на {new_color.lower()}') # Этого в задании нет, моя доработка
                 break # без него выдает сообщение "Нельзя сменить цвет.." каждый раз, даже при удачной смене цвета
             elif new_color.lower() != i and sum_of_colors == 0:
                 print(f'Нельзя сменить цвет на {new_color}')
