@@ -10,6 +10,10 @@ class Product:
 class Shop:
     __file_name = 'products.txt'
 
+    def __init__(self): # "Заглушка" - если файла нет, она его создаст, иначе будет ошибка
+        file = open(self.__file_name, 'w')
+        file.close
+
     def add(self, *products):
         for item in products:
             file = open(self.__file_name, 'r')
