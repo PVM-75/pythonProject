@@ -1,3 +1,7 @@
+class IncorrectCarNumbers(Exception):
+    def __init__(self, message):
+        self.message = message
+
 class IncorrectVinNumber(Exception):
     def __init__(self, message):
         self.message = message
@@ -20,9 +24,9 @@ class Car:
 
     def __is_valid_number(self, numbers):
         if isinstance(numbers, str) == False:
-            raise IncorrectVinNumber('Некорректный тип данных для номеров')
+            raise IncorrectCarNumbers('Некорректный тип данных для номеров')
         elif len(numbers) != 6:
-            raise IncorrectVinNumber('Неверная длина номера')
+            raise IncorrectCarNumbers('Неверная длина номера')
         return True
 
 if __name__ == '__main__':
