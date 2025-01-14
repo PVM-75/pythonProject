@@ -38,3 +38,4 @@ if __name__ == '__main__':
     th2.start()
     th1.join()
     th2.join()
+    print(f'Итоговый баланс: {bk.balance}')
